@@ -2,7 +2,7 @@
   "name": "ArtBoard",
   "version": "1.0.0",
   "description": "ArtBoard",
-  "main": "app.js",
+  "main": "server/app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
