@@ -4,66 +4,71 @@ body {
 	text-align: center;
 	font-family: Helvetica;
 	color: powderblue;
+	
+	span {
+		padding-right: 10px;
+	}
+
+	input, button {
+		border-radius: 5px;
+		border-style: solid;
+		border-color: powderblue;
+		border-width: 3px;
+		color: powderblue;
+	}
+	
+	button {
+		background-color: white;
+	}
+
+	input {
+		width: 25px;
+	}
+	
+	.title {
+		margin-top: 30px;
+	}
+
+	.board {
+		display: inline-block;
+		min-width: 100px;
+		min-height: 100px;
+		margin: 30px 0px 0px 10px;
+		
+		.row {
+			display: block;
+			margin: -10px;
+
+			.square {
+				position: relative;
+				display: inline-block;
+				border-color: powderblue;
+				border-style: solid;
+				border-width: 5px;
+				width: 100px;
+				height: 100px;
+				margin: 0px 0px 0px -10px;
+				&.x {
+					background-image: url("https://usercontent2.hubstatic.com/7406807_f260.jpg");
+					background-size: 100px 100px;
+					background-repeat: no-repeat;
+				}
+				&.o {
+					background-image: url("https://usercontent1.hubstatic.com/7406806_f260.jpg");
+					background-size: 100px 100px;
+					background-repeat: no-repeat;
+				}
+			}
+		}
+	}
+	
 }
 
-span {
-	padding-right: 10px;
-}
 
-input {
-	width: 25px;
-	color: powderblue;
-	border-radius: 5px;
-	border-style: solid;
-	border-color: powderblue;
-	border-width: 3px;
-}
 
-button {
-	color: powderblue;
-	border-radius: 5px;
-	border-style: solid;
-	border-color: powderblue;
-	border-width: 3px;
-	background-color: white;
-}
 
-.board {
-	display: inline-block;
-	margin-top: 30px;
-	min-width: 100px;
-	min-height: 100px;
-	margin: 30px 0px 0px 10px;
-}
 
-.title {
-	margin-top: 30px;
-}
 
-.row {
-	display: block;
-	margin: -10px;
-}
 
-.square {
-	position: relative;
-	display: inline-block;
-	border-color: powderblue;
-	border-style: solid;
-	border-width: 5px;
-	width: 100px;
-	height: 100px;
-	margin: 0px 0px 0px -10px;
-}
 
-.x {
-	background-image: url("https://usercontent2.hubstatic.com/7406807_f260.jpg");
-	background-size: 100px 100px;
-	background-repeat: no-repeat;
-}
 
-.o {
-	background-image: url("https://usercontent1.hubstatic.com/7406806_f260.jpg");
-	background-size: 100px 100px;
-	background-repeat: no-repeat;
-}
