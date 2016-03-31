@@ -1,19 +1,34 @@
 {
-  "name": "ArtBoard",
+  "name": "TicTacGro",
   "version": "1.0.0",
-  "description": "ArtBoard",
+  "description": "TicTacGro",
   "main": "server/app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/swesleyandloki/ArtBoard"
+    "url": "https://github.com/swesleyandloki/TicTacGro"
   },
   "author": "swesleyandloki",
   "license": "ISC",
   "dependencies": {
+    "angular": "^1.5.3",
     "express": "^4.13.4",
+    "lodash": "^4.6.1",
     "nodemon": "^1.9.1"
+  },
+  "devDependencies": {
+    "css-loader": "^0.23.1",
+    "gulp": "^3.9.1",
+    "gulp-sass": "^2.2.0",
+    "gulp-webpack": "^1.5.0",
+    "html-loader": "^0.4.3",
+    "html-webpack-plugin": "^2.15.0",
+    "node-sass": "^3.4.2",
+    "sass-loader": "^3.2.0",
+    "style-loader": "^0.13.1",
+    "webpack": "^1.12.14",
+    "webpack-stream": "^3.1.0"
   }
 }

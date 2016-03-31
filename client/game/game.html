@@ -1,0 +1,11 @@
+<div ng-if="!size">
+	We'd like to play a game of size
+	<input type=text placeholder="3" ng-model="rows">
+	squared.
+	<button ng-click="initialize()">Let's Play</button>
+</div>
+<div ng-if="winner">
+    <h2>Team {{winner}} is the winner!!!</h2>
+    <button ng-click="resetGame()">Play Again!</button>
+</div>
+<board></board>
