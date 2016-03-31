@@ -2,7 +2,7 @@ var _ = require('lodash');
 
 module.exports = function(){
 	return {
-		controller: ['$scope', '$window', '$document', GameController],
+		controller: ['$scope', '$window', '$timeout', GameController],
 		scope: {},
 		template: require('./game.html'),
 		restrict: 'E'
@@ -10,7 +10,7 @@ module.exports = function(){
 
 };
 
-function GameController($scope, $window, $document) {
+function GameController($scope, $window, $timeout) {
 
 	$scope.initialize = initialize;
 	$scope.switchTeam = switchTeam;
@@ -51,6 +51,9 @@ function GameController($scope, $window, $document) {
 		generateRowAndColWins(rows);
 		generateDiagWins(rows);
 		$scope.size = rows;
+		$timeout(function() {
+			beautifyBoard(rows);
+		});
 	}
 
 	function generateRowAndColWins(rows) {
@@ -101,5 +104,31 @@ function GameController($scope, $window, $document) {
 
 	function resetGame() {
 		$window.location.reload();
+	}
+
+	function beautifyBoard(rows) {
+		// NOTE: please forgive me for this.  I am so so sorry.  I just noticed the board wasn't supposed to have borders.  And I am so so tired.
+		if (rows > 1) {
+			var leftsquares = document.getElementsByClassName("0");
+			var right = '' + (rows - 1);
+			var rightsquares = document.getElementsByClassName(right);
+			var rows = document.getElementsByClassName("row");
+			var topsquares = rows[0].getElementsByClassName('square');
+			var bottomsquares = rows[rows.length-1].getElementsByClassName('square');
+			_.each(leftsquares, function(el) {
+				el.classList.add('leftside');
+			});
+			_.each(rightsquares, function(el) {
+				el.classList.add('rightside');
+			});
+			_.each(topsquares, function(el) {
+				el.classList.add('topside');
+			});
+			_.each(bottomsquares, function(el) {
+				el.classList.add('bottomside');
+			});
+			
+		}
+
 	}
 };

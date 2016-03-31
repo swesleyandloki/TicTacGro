@@ -48,6 +48,18 @@ body {
 				width: 100px;
 				height: 100px;
 				margin: 0px 0px 0px -10px;
+				&.rightside {
+					border-right-style: hidden;
+				}
+				&.leftside {
+					border-left-style: hidden;
+				}
+				&.topside {
+					border-top-style: hidden;
+				}
+				&.bottomside {
+					border-bottom-style: hidden;
+				}
 				&.x {
 					background-image: url("https://usercontent2.hubstatic.com/7406807_f260.jpg");
 					background-size: 100px 100px;
