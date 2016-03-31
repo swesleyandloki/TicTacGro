@@ -2,11 +2,6 @@ module.exports = function(){
 	return {
 		template: require('./row.html'),
 		restrict: 'E',
-		require: '^game',
-		link: link
+		require: '^game'
 	};
 };
-
-function link($scope, $element, $attrs) {
-	console.log('row', $element);
-}

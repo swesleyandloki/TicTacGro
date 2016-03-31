@@ -20,10 +20,12 @@ function GameController($scope, $window, $document) {
 	$scope.team;
 	$scope.score;
 	$scope.winner;
+	$scope.clicked;
 	var wins;
 
 
 	function initialize() {
+		$scope.clicked = [];
 		$scope.board = {};
 		$scope.team = 'x';
 		$scope.winner = undefined;
@@ -85,9 +87,11 @@ function GameController($scope, $window, $document) {
 	}
 
 	function checkForWins() {
+		if ($scope.clicked.length === ($scope.size * $scope.size)) {
+			$scope.winner = 'nobody';
+		}
 		_.each(wins, function(win) {
 			var hits = _.intersection(win, $scope.score[$scope.team]);
-			console.log(hits, win, hits.length, $scope.size);
 			if (hits.length === $scope.size) {
 				$scope.winner = $scope.team;
 				return;
